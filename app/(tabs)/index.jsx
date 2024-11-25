@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Link } from "expo-router";
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.linkContainer}>
         <Link href="/" style={styles.link}>
           <Text style={styles.linkText}>Home</Text>
@@ -15,7 +15,7 @@ const Home = () => {
           <Text style={styles.linkText}>TaskList</Text>
         </Link>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
