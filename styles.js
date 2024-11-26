@@ -1,5 +1,42 @@
-import { TextInput, Pressable, Text, FlatList, View } from 'react-native';
+import { TextInput, Pressable, Text, FlatList, View, Image, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+
+export const StyledContainer = styled(SafeAreaView)`
+  padding: 10px;
+  background-color: #e3e3e3;
+  flex: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledLink = styled.Text`
+  font-weight: bold;
+  font-size: 18px;
+`;
+
+export const StyledLinkContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const StyledImage = styled.Image`
+  width: 100%;
+  max-height: 400px;
+  resizeMode: contain;
+`;
+
+export const StyledTitle = styled.Text`
+  font-size: 60px;
+  font-weight: bold;
+  margin: 10px;
+`;
+
+export const StyledText = styled.Text`
+  text-align: center;
+  font-size: 24px;
+`;
 
 export const StyledTextInput = styled.TextInput`
   border: 4px solid #000;
@@ -13,19 +50,26 @@ export const StyledTextInput = styled.TextInput`
 `;
 
 export const StyledPressable = styled.Pressable`
-  background-color: black;
+  background-color: #f95959;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  min-width: 320px;
 `;
 
-export const StyledText = styled.Text`
-  color: white;
+export const StyledPressableSecondary = styled(StyledPressable)`
+  background-color: #9BA1A6;
+`;
+
+export const StyledTextPressable = styled.Text`
   text-align: center;
-  font-size: 40px;
-  height: 100%;
+  font-size: 20px;
+`;
+
+export const StyledTextPressableSecondary = styled(StyledTextPressable)`
+  color: #fff;
 `;
 
 export const Row = styled.View`

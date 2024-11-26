@@ -5,7 +5,8 @@ const TabsNavigator = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#9BA1A6",
+        tabBarActiveTintColor: "#233142", // Color más oscuro para el tab activo
+        tabBarInactiveTintColor: "#9BA1A6", // Color para el tab inactivo
         headerShown: false, // Opcional: desactiva los encabezados
       }}
     >

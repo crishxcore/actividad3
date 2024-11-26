@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text,  SafeAreaView } from "react-native";
 import { Link } from "expo-router";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StyledTextInput, StyledPressable, StyledText, Row } from '../../styles';
+import {StyledTextInput, StyledPressable, StyledText, Row, StyledContainer, StyledLinkContainer, StyledLink, StyledTitle} from '../../styles';
 
 const AddItem = () => {
   const [text, setText] = useState('');
@@ -22,18 +22,20 @@ const AddItem = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.linkContainer}>
-        <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Inicio</Text>
+    <StyledContainer>
+      <StyledLinkContainer>
+        <Link href="/">
+          <StyledLink>Inicio</StyledLink>
         </Link>
-        <Link href="/AddItem" style={styles.link}>
-          <Text style={styles.linkText}>Añadir tarea</Text>
+        <Link href="/AddItem">
+          <StyledLink>Añadir tarea</StyledLink>
         </Link>
-        <Link href="/TaskList" style={styles.link}>
-          <Text style={styles.linkText}>Mis tareas</Text>
+        <Link href="/TaskList">
+          <StyledLink>Mis tareas</StyledLink>
         </Link>
-      </View>
+      </StyledLinkContainer>
+      <StyledTitle>Añade tu tarea</StyledTitle>
+      <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
       <Row>
         <StyledTextInput 
           value={text}
@@ -53,39 +55,8 @@ const AddItem = () => {
           <StyledText>Ver mis tareas</StyledText>
         </Link>
       </StyledPressable>
-    </SafeAreaView>
+    </StyledContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    backgroundColor: "#dddddd",
-    flex: 1,
-  },
-  linkContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-  link: {
-    marginHorizontal: 10,
-  },
-  linkText: {
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-  successMessageContainer: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: "#d4edda",
-    borderRadius: 5,
-  },
-  successMessage: {
-    color: "#155724",
-    textAlign: "center",
-    fontSize: 16,
-  },
-});
 
 export default AddItem;

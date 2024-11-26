@@ -1,58 +1,37 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { Text } from "react-native";
 import { Link } from "expo-router";
-import {StyledPressable, StyledText} from '../../styles';
+import {StyledContainer, StyledImage, StyledLink, StyledLinkContainer, StyledPressable, StyledText, StyledTextPressable, StyledTitle, StyledPressableSecondary, StyledTextPressableSecondary} from '../../styles';
+import homeimage from '../../assets/chill-time.png';
 
 const Home = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.linkContainer}>
-        <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Inicio</Text>
-        </Link>
-        <Link href="/AddItem" style={styles.link}>
-          <Text style={styles.linkText}>Añadir tarea</Text>
-        </Link>
-        <Link href="/TaskList" style={styles.link}>
-          <Text style={styles.linkText}>Mis tareas</Text>
-        </Link>
-      </View>
-      <StyledPressable onPress={() => {}}>
-        <Link href="/AddItem">
-          <StyledText>Añadir tarea</StyledText>
-        </Link>
-      </StyledPressable>
-      <StyledPressable onPress={() => {}}>
-        <Link href="/TaskList">
-          <StyledText>Ver mis tareas</StyledText>
-        </Link>
-      </StyledPressable>
-    </SafeAreaView>
+      <StyledContainer>
+        <StyledLinkContainer>
+          <Link href="/">
+            <StyledLink>Inicio</StyledLink>
+          </Link>
+          <Link href="/AddItem">
+            <StyledLink>Añadir tarea</StyledLink>
+          </Link>
+          <Link href="/TaskList">
+            <StyledLink>Mis tareas</StyledLink>
+          </Link>
+        </StyledLinkContainer>
+        <StyledTitle>Todoista</StyledTitle>
+        <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
+        <StyledImage source={homeimage} />
+        <StyledPressable onPress={() => {}}>
+          <Link href="/AddItem">
+            <StyledTextPressable>Añadir tarea</StyledTextPressable>
+          </Link>
+        </StyledPressable>
+        <StyledPressableSecondary onPress={() => {}}>
+          <Link href="/TaskList">
+            <StyledTextPressable>Ver mis tareas</StyledTextPressable>
+          </Link>
+        </StyledPressableSecondary>
+      </StyledContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    backgroundColor: "#dddddd",
-    flex: 1,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-  linkContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-  link: {
-    marginHorizontal: 10,
-  },
-  linkText: {
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-});
 
 export default Home;
