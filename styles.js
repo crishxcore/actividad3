@@ -23,36 +23,39 @@ export const StyledLinkContainer = styled.View`
 
 export const StyledImage = styled.Image`
   width: 100%;
-  max-height: 400px;
+  max-height: 350px;
   resizeMode: contain;
 `;
 
 export const StyledTitle = styled.Text`
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
-  margin: 10px;
+`;
+
+export const StyledSubtitle = styled.Text`
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 export const StyledText = styled.Text`
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
 `;
 
 export const StyledTextInput = styled.TextInput`
-  border: 4px solid #000;
+  border: 2px solid #9BA1A6;
   padding: 10px;
   margin: 10px;
-  background-color: lightblue;
+  background-color: #e3e3e3;
   border-radius: 10px;
-  font-size: 40px;
-  flex: 1;
-  height: 80px;
+  font-size: 20px;
+  width: 320px;
 `;
 
 export const StyledPressable = styled.Pressable`
   background-color: #f95959;
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -68,8 +71,17 @@ export const StyledTextPressable = styled.Text`
   font-size: 20px;
 `;
 
-export const StyledTextPressableSecondary = styled(StyledTextPressable)`
-  color: #fff;
+export const SuccessMessage = styled.View`
+  background-color: lightgreen;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  border: 2px solid green;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  position: absolute;
+  top: 10px;
 `;
 
 export const Row = styled.View`

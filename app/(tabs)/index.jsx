@@ -1,12 +1,12 @@
 import { Text } from "react-native";
 import { Link } from "expo-router";
-import {StyledContainer, StyledImage, StyledLink, StyledLinkContainer, StyledPressable, StyledText, StyledTextPressable, StyledTitle, StyledPressableSecondary, StyledTextPressableSecondary} from '../../styles';
+import {StyledContainer, StyledImage, StyledLink, StyledLinkContainer, StyledPressable, StyledText, StyledTextPressable, StyledTitle, StyledPressableSecondary} from '../../styles';
 import homeimage from '../../assets/chill-time.png';
 
 const Home = () => {
   return (
       <StyledContainer>
-        <StyledLinkContainer>
+        {/* <StyledLinkContainer>
           <Link href="/">
             <StyledLink>Inicio</StyledLink>
           </Link>
@@ -16,7 +16,7 @@ const Home = () => {
           <Link href="/TaskList">
             <StyledLink>Mis tareas</StyledLink>
           </Link>
-        </StyledLinkContainer>
+        </StyledLinkContainer> */}
         <StyledTitle>Todoista</StyledTitle>
         <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
         <StyledImage source={homeimage} />

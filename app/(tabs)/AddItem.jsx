@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { View, Text,  SafeAreaView } from "react-native";
 import { Link } from "expo-router";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {StyledTextInput, StyledPressable, StyledText, Row, StyledContainer, StyledLinkContainer, StyledLink, StyledTitle} from '../../styles';
+import {StyledTextInput, StyledPressable, StyledSubtitle, StyledText, Row, StyledContainer, StyledLinkContainer, StyledLink, StyledTitle, StyledImage, StyledTextPressable, StyledPressableSecondary, SuccessMessage} from '../../styles';
+import additemimage from '../../assets/painting.png';
 
 const AddItem = () => {
   const [text, setText] = useState('');
@@ -23,7 +24,7 @@ const AddItem = () => {
 
   return (
     <StyledContainer>
-      <StyledLinkContainer>
+      {/* <StyledLinkContainer>
         <Link href="/">
           <StyledLink>Inicio</StyledLink>
         </Link>
@@ -33,28 +34,27 @@ const AddItem = () => {
         <Link href="/TaskList">
           <StyledLink>Mis tareas</StyledLink>
         </Link>
-      </StyledLinkContainer>
-      <StyledTitle>Añade tu tarea</StyledTitle>
-      <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
-      <Row>
+      </StyledLinkContainer> */}
+      <StyledSubtitle>Añade tus tareas</StyledSubtitle>
         <StyledTextInput 
           value={text}
-          onChangeText={text => setText(text)} 
+          onChangeText={text => setText(text)}
+          placeholder="Escribe tu tarea aquí" 
         />
         <StyledPressable onPress={addTask}>
-          <StyledText>+</StyledText>
+          <StyledText>Añadir tarea</StyledText>
         </StyledPressable>
-      </Row>
       {successMessage ? (
-        <View style={styles.successMessageContainer}>
-          <Text style={styles.successMessage}>{successMessage}</Text>
-        </View>
+        <SuccessMessage>
+          <Text>{successMessage}</Text>
+        </SuccessMessage>
       ) : null}
-      <StyledPressable onPress={() => {}}>
+      <StyledPressableSecondary onPress={() => {}}>
         <Link href="/TaskList">
-          <StyledText>Ver mis tareas</StyledText>
+          <StyledTextPressable>Ir a mis tareas</StyledTextPressable>
         </Link>
-      </StyledPressable>
+      </StyledPressableSecondary>
+      <StyledImage source={additemimage} />
     </StyledContainer>
   );
 };
