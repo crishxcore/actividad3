@@ -1,4 +1,5 @@
 import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 const TabsNavigator = () => {
   return (
@@ -13,20 +14,29 @@ const TabsNavigator = () => {
         options={{
           title: "Inicio",
           tabBarLabel: "Inicio",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" color={color} size={size} />
+          ),
         }}
       />
       <Tabs.Screen
         name="AddItem"
         options={{
           title: "Añadir tarea",
-          tabBarLabel: "Añadir",
+          tabBarLabel: "Añadir tarea",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="add-circle" color={color} size={size} />
+          ),
         }}
       />
       <Tabs.Screen
         name="TaskList"
         options={{
           title: "Lista de tareas",
-          tabBarLabel: "Tareas",
+          tabBarLabel: "Mis tareas",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="list" color={color} size={size} />
+          ),
         }}
       />
     </Tabs>

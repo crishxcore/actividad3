@@ -6,13 +6,13 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.linkContainer}>
         <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Home</Text>
+          <Text style={styles.linkText}>Inicio</Text>
         </Link>
         <Link href="/AddItem" style={styles.link}>
-          <Text style={styles.linkText}>AddItem</Text>
+          <Text style={styles.linkText}>Añadir tarea</Text>
         </Link>
         <Link href="/TaskList" style={styles.link}>
-          <Text style={styles.linkText}>TaskList</Text>
+          <Text style={styles.linkText}>Mis tareas</Text>
         </Link>
       </View>
     </SafeAreaView>
