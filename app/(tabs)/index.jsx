@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Link } from "expo-router";
+import {StyledPressable, StyledText} from '../../styles';
 
 const Home = () => {
   return (
@@ -15,6 +16,16 @@ const Home = () => {
           <Text style={styles.linkText}>Mis tareas</Text>
         </Link>
       </View>
+      <StyledPressable onPress={() => {}}>
+        <Link href="/AddItem">
+          <StyledText>Añadir tarea</StyledText>
+        </Link>
+      </StyledPressable>
+      <StyledPressable onPress={() => {}}>
+        <Link href="/TaskList">
+          <StyledText>Ver mis tareas</StyledText>
+        </Link>
+      </StyledPressable>
     </SafeAreaView>
   );
 };
