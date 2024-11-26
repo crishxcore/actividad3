@@ -35,6 +35,7 @@ export const StyledTitle = styled.Text`
 export const StyledSubtitle = styled.Text`
   font-size: 30px;
   font-weight: bold;
+  margin: 10px;
 `;
 
 export const StyledText = styled.Text`
@@ -46,7 +47,7 @@ export const StyledTextInput = styled.TextInput`
   border: 2px solid #9BA1A6;
   padding: 10px;
   margin: 10px;
-  background-color: #e3e3e3;
+  background-color: white;
   border-radius: 10px;
   font-size: 20px;
   width: 320px;
@@ -74,14 +75,13 @@ export const StyledTextPressable = styled.Text`
 export const SuccessMessage = styled.View`
   background-color: lightgreen;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 40px;
   border: 2px solid green;
   align-items: center;
   justify-content: center;
   min-width: 320px;
   position: absolute;
-  top: 10px;
+  top: 40px;
 `;
 
 export const Row = styled.View`
@@ -91,17 +91,18 @@ export const Row = styled.View`
 `;
 
 export const StyledFlatList = styled.FlatList`
-  margin: 10px;
+  width: 100%;
+  padding: 20px;
 `;
 
 export const Li = styled.Text`
-  background-color: black;
-  color: white;
-  padding: 10px;
+  background-color: #fff;
+  padding: 20px;
   margin: 10px;
   border-radius: 10px;
-  font-size: 40px;
+  font-size: 20px;
+  align-self: center;
+  min-width: 320px;
+  box-shadow: rgba(150, 160, 165, 0.8) 0px 10px 20px;
   flex: 1;
-  align-items: stretch;
-  justify-content: stretch;
 `;

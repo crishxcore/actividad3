@@ -3,7 +3,7 @@ import { View, Text,  SafeAreaView } from "react-native";
 import { Link } from "expo-router";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {StyledTextInput, StyledPressable, StyledSubtitle, StyledText, Row, StyledContainer, StyledLinkContainer, StyledLink, StyledTitle, StyledImage, StyledTextPressable, StyledPressableSecondary, SuccessMessage} from '../../styles';
-import additemimage from '../../assets/painting.png';
+import additemimage from '../../assets/add.png';
 
 const AddItem = () => {
   const [text, setText] = useState('');

@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
-import { Link } from "expo-router";
+import { useState, useCallback } from "react";
+import { Text } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-import { StyledFlatList, Li } from '../../styles';
+import {StyledFlatList, Li, StyledSubtitle, StyledContainer, StyledImage} from '../../styles';
+import taskimage from '../../assets/tasks.png';
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -24,8 +24,8 @@ const TaskList = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.linkContainer}>
+    <StyledContainer>
+      {/* <View style={styles.linkContainer}>
         <Link href="/" style={styles.link}>
           <Text style={styles.linkText}>Inicio</Text>
         </Link>
@@ -35,34 +35,20 @@ const TaskList = () => {
         <Link href="/TaskList" style={styles.link}>
           <Text style={styles.linkText}>Mis tareas</Text>
         </Link>
-      </View>
+      </View> */}
+      <StyledImage source={taskimage} />
+      <StyledSubtitle>Mis tareas</StyledSubtitle>
       <StyledFlatList
         data={tasks}
-        renderItem={({ item }) => <Li><Text>{item}</Text></Li>}
+        renderItem={({ item, index }) => (
+          <Li>
+            <Text>{index + 1}. {item}</Text>
+          </Li>
+        )}
         keyExtractor={(item, index) => index.toString()}
       />
-    </SafeAreaView>
+    </StyledContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    backgroundColor: "#dddddd",
-    flex: 1,
-  },
-  linkContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-  link: {
-    marginHorizontal: 10,
-  },
-  linkText: {
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-});
 
 export default TaskList;

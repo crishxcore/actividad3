@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import { Link } from "expo-router";
 import {StyledContainer, StyledImage, StyledLink, StyledLinkContainer, StyledPressable, StyledText, StyledTextPressable, StyledTitle, StyledPressableSecondary} from '../../styles';
-import homeimage from '../../assets/chill-time.png';
+import homeimage from '../../assets/home.png';
 
 const Home = () => {
   return (
