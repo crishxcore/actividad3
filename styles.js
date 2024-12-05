@@ -1,6 +1,7 @@
 import { TextInput, Pressable, Text, FlatList, View, Image, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 
+
 export const StyledContainer = styled(SafeAreaView)`
   padding: 10px;
   background-color: #e3e3e3;
@@ -105,4 +106,29 @@ export const Li = styled.Text`
   min-width: 320px;
   box-shadow: rgba(150, 160, 165, 0.8) 0px 10px 20px;
   flex: 1;
+`;
+
+export const StyledPressableSmall = styled.Pressable`
+  background-color: #f95959;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px; 
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+`;
+
+export const StyledPressableSecondarySmall = styled(StyledPressableSmall)`
+  background-color: #9BA1A6;
+  bottom: 20px;
+`;
+
+export const StyledTextButtonSmall = styled.Text`
+  color: white; 
+  font-size: 16px; 
+  font-weight: bold; 
+  text-align: center; 
 `;

@@ -1,36 +1,57 @@
-import { Text } from "react-native";
-import { Link } from "expo-router";
-import {StyledContainer, StyledImage, StyledLink, StyledLinkContainer, StyledPressable, StyledText, StyledTextPressable, StyledTitle, StyledPressableSecondary} from '../../styles';
-import homeimage from '../../assets/home.png';
+import { View } from "react-native";
+import { useRouter } from "expo-router";
+import homeimage from "../../assets/home.png";
+import {
+  StyledContainer,
+  StyledImage,
+  StyledPressable,
+  StyledPressableSecondary,
+  StyledTextPressable,
+  StyledTitle,
+  StyledText,
+  StyledPressableSecondarySmall,
+  StyledPressableSmall,
+  StyledTextButtonSmall,
+} from "../../styles";
 
 const Home = () => {
+  const router = useRouter();
+
   return (
-      <StyledContainer>
-        {/* <StyledLinkContainer>
-          <Link href="/">
-            <StyledLink>Inicio</StyledLink>
-          </Link>
-          <Link href="/AddItem">
-            <StyledLink>Añadir tarea</StyledLink>
-          </Link>
-          <Link href="/TaskList">
-            <StyledLink>Mis tareas</StyledLink>
-          </Link>
-        </StyledLinkContainer> */}
-        <StyledTitle>Todoista</StyledTitle>
-        <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
-        <StyledImage source={homeimage} />
-        <StyledPressable onPress={() => {}}>
-          <Link href="/AddItem">
-            <StyledTextPressable>Añadir tarea</StyledTextPressable>
-          </Link>
-        </StyledPressable>
-        <StyledPressableSecondary onPress={() => {}}>
-          <Link href="/TaskList">
-            <StyledTextPressable>Ver mis tareas</StyledTextPressable>
-          </Link>
-        </StyledPressableSecondary>
-      </StyledContainer>
+    <StyledContainer>
+      <StyledTitle>Todoista</StyledTitle>
+      <StyledText>¡Te ayuda a completar tus tareas!</StyledText>
+      <StyledImage source={homeimage} />
+
+      <StyledPressable onPress={() => router.push("/(tabs)/AddItem")}>
+        <StyledTextPressable>Añadir tarea</StyledTextPressable>
+      </StyledPressable>
+
+      <StyledPressableSecondary onPress={() => router.push("/(tabs)/TaskList")}>
+        <StyledTextPressable>Ver mis tareas</StyledTextPressable>
+      </StyledPressableSecondary>
+
+      {/* Contenedor para los botones de About y Help */}
+      <View
+        style={{
+          flexDirection: "column",
+          gap: 10,
+          alignItems: "center",
+          marginTop: 120,
+          marginLeft: 200,
+        }}
+      >
+        <StyledPressableSecondarySmall
+          onPress={() => router.push("/(stack)/About")}
+        >
+          <StyledTextButtonSmall>About</StyledTextButtonSmall>
+        </StyledPressableSecondarySmall>
+
+        <StyledPressableSmall onPress={() => router.push("/(stack)/Help")}>
+          <StyledTextButtonSmall>Help</StyledTextButtonSmall>
+        </StyledPressableSmall>
+      </View>
+    </StyledContainer>
   );
 };
 

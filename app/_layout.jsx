@@ -6,7 +6,10 @@ const AppLayout = () => {
       screenOptions={{
         headerShown: false,
       }}
-    />
+    >
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(stack)" />
+    </Stack>
   );
 };
 
