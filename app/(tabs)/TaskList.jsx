@@ -1,7 +1,5 @@
-import { useState, useCallback } from "react";
 import { Text } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect } from "@react-navigation/native";
+import { useTaskContext } from '../../providers/TaskProvider';
 import {
   StyledFlatList,
   Li,
@@ -12,22 +10,7 @@ import {
 import taskimage from "../../assets/tasks.png";
 
 const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-
-  const loadTasks = async () => {
-    const storedTasks = await AsyncStorage.getItem("tasks");
-    if (storedTasks) {
-      const parsedTasks = JSON.parse(storedTasks);
-      console.log("Tasks loaded:", parsedTasks);
-      setTasks(parsedTasks);
-    }
-  };
-
-  useFocusEffect(
-    useCallback(() => {
-      loadTasks();
-    }, [])
-  );
+  const { tasks } = useTaskContext();
 
   return (
     <StyledContainer>
@@ -35,14 +18,8 @@ const TaskList = () => {
       <StyledSubtitle>Mis tareas</StyledSubtitle>
       <StyledFlatList
         data={tasks}
-        renderItem={({ item, index }) => (
-          <Li>
-            <Text>
-              {index + 1}. {item}
-            </Text>
-          </Li>
-        )}
-        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <Li><Text>{item}</Text></Li>}
+        keyExtractor={(item, index) => item + index}
       />
     </StyledContainer>
   );

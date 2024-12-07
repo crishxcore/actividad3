@@ -1,15 +1,18 @@
 import { Stack } from "expo-router";
+import TaskProvider from "../providers/TaskProvider";
 
 const AppLayout = () => {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="(stack)" />
-    </Stack>
+    <TaskProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(stack)" />
+      </Stack>
+    </TaskProvider>
   );
 };
 

@@ -73,18 +73,6 @@ export const StyledTextPressable = styled.Text`
   font-size: 20px;
 `;
 
-export const SuccessMessage = styled.View`
-  background-color: lightgreen;
-  padding: 10px;
-  border-radius: 40px;
-  border: 2px solid green;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
-  position: absolute;
-  top: 40px;
-`;
-
 export const Row = styled.View`
   flex-direction: row;
   padding: 10px;
